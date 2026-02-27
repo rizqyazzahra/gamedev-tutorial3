@@ -20,6 +20,7 @@ var slide_timer = 0.0
 var slide_direction = 1
 var is_finished = false
 
+
 func _physics_process(delta):
 	if is_finished:
 		velocity.x = 0
@@ -76,6 +77,7 @@ func _physics_process(delta):
 	_update_animation()
 	_update_collision()
 
+
 func _update_animation():
 	if is_sliding:
 		animation.play("Slide")
@@ -90,18 +92,22 @@ func _update_animation():
 		animation.play("Walk")
 	else:
 		animation.play("Idle")
-		
+
+
 func _update_collision():
 	var is_low = is_crouching or is_sliding
 	stand_collision.disabled = is_low
 	crouch_collision.disabled = not is_low
-	
+
+
 func on_reach_finish():
 	is_finished = true
 	velocity = Vector2.ZERO
-	
+
+
 func _ready() -> void:
 	pass
+
 
 func _process(delta):
 	pass
