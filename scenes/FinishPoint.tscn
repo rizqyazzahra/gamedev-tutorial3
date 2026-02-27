@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ytqmfyv4qyxv"]
+
+[ext_resource type="Script" uid="uid://djkjkfjs7vhws" path="res://scenes/FinishPoint.gd" id="1_4gx37"]
+[ext_resource type="Texture2D" uid="uid://dfm8gpb18bk21" path="res://assets/finish flag.png" id="1_73a4w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gx37"]
+size = Vector2(42, 105.75)
+
+[node name="FinishPoint" type="Area2D" unique_id=2061044807]
+script = ExtResource("1_4gx37")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1593464752]
+position = Vector2(138, 146.5)
+scale = Vector2(0.3525424, 0.34067795)
+texture = ExtResource("1_73a4w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=527419683]
+position = Vector2(124, 143.875)
+shape = SubResource("RectangleShape2D_4gx37")

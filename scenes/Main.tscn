@@ -1,17 +1,45 @@
 [gd_scene format=3 uid="uid://dsyfep1odrxje"]
 
 [ext_resource type="PackedScene" uid="uid://ds60n6krsavle" path="res://scenes/Ground.tscn" id="1_elqb8"]
+[ext_resource type="Texture2D" uid="uid://bw3p01d742nno" path="res://assets/bg.jpg" id="1_vcsgt"]
 [ext_resource type="PackedScene" uid="uid://3sayjvukgrof" path="res://scenes/player.tscn" id="2_rvslj"]
+[ext_resource type="PackedScene" uid="uid://ytqmfyv4qyxv" path="res://scenes/FinishPoint.tscn" id="3_0bbpv"]
+[ext_resource type="PackedScene" uid="uid://bhva1l0b3214e" path="res://scenes/Ground2.tscn" id="4_rarhs"]
 
 [node name="Root" type="Node2D" unique_id=918599496]
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=296517038]
+offset_left = -37.0
+offset_top = 1.0
+offset_right = 1157.0
+offset_bottom = 691.0
+texture = ExtResource("1_vcsgt")
+expand_mode = 1
+stretch_mode = 4
+
 [node name="Ground" parent="." unique_id=673580990 instance=ExtResource("1_elqb8")]
-position = Vector2(296, 324)
+position = Vector2(382, 488)
 
 [node name="Ground2" parent="." unique_id=1551337937 instance=ExtResource("1_elqb8")]
-position = Vector2(856, 324)
+position = Vector2(942, 488)
 
 [node name="Ground3" parent="." unique_id=1648397147 instance=ExtResource("1_elqb8")]
-position = Vector2(576, 394)
+position = Vector2(662, 558)
+
+[node name="Ground4" parent="." unique_id=2124753681 instance=ExtResource("1_elqb8")]
+position = Vector2(266, 244)
+
+[node name="Ground5" parent="." unique_id=1008125367 instance=ExtResource("1_elqb8")]
+position = Vector2(614, 244)
+
+[node name="Ground6" parent="." unique_id=1956661539 instance=ExtResource("1_elqb8")]
+position = Vector2(515, 87)
+
+[node name="Ground7" parent="." unique_id=543607034 instance=ExtResource("4_rarhs")]
+position = Vector2(923, 243)
+
+[node name="FinishPoint" parent="." unique_id=2061044807 instance=ExtResource("3_0bbpv")]
+position = Vector2(-15, 15)
 
 [node name="Player" parent="." unique_id=269357983 instance=ExtResource("2_rvslj")]
+position = Vector2(-15, 285)

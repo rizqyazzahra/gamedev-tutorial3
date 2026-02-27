@@ -4,25 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d2to1aj6m7mgl" path="res://assets/kenney_platformercharacters/PNG/Adventurer/adventurer_tilesheet.png" id="2_g2els"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
-size = Vector2(63, 92)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(61, 81)
-
-[sub_resource type="Animation" id="Animation_smehm"]
-resource_name = "Cheer"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.23333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [7, 8]
-}
+size = Vector2(66, 92)
 
 [sub_resource type="Animation" id="Animation_fjrip"]
 resource_name = "Duck"
@@ -100,21 +82,6 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_ur7pv"]
-resource_name = "Slide"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.06666667),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [19]
-}
-
 [sub_resource type="Animation" id="Animation_dqkch"]
 resource_name = "Walk"
 length = 0.001
@@ -133,26 +100,20 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qhqgy"]
 _data = {
-&"Cheer": SubResource("Animation_smehm"),
 &"Duck": SubResource("Animation_fjrip"),
 &"Fall": SubResource("Animation_tuyoq"),
 &"Idle": SubResource("Animation_g2els"),
 &"Jump": SubResource("Animation_qlg0r"),
 &"RESET": SubResource("Animation_qhqgy"),
-&"Slide": SubResource("Animation_ur7pv"),
 &"Walk": SubResource("Animation_dqkch")
 }
 
 [node name="Player" type="CharacterBody2D" unique_id=269357983]
 script = ExtResource("1_g2els")
 
-[node name="StandCollision" type="CollisionShape2D" parent="." unique_id=2001488669]
-position = Vector2(258.5, 88)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2001488669]
+position = Vector2(257, 88)
 shape = SubResource("RectangleShape2D_hqtel")
-
-[node name="CrouchCollision" type="CollisionShape2D" parent="." unique_id=1652449539]
-position = Vector2(257.5, 93.5)
-shape = SubResource("RectangleShape2D_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=579809306]
 position = Vector2(258, 80)
