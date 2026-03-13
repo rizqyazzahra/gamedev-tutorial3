@@ -12,6 +12,9 @@ extends CharacterBody2D
 @onready var sprite = $Sprite2D
 @onready var stand_collision = $StandCollision
 @onready var crouch_collision = $CrouchCollision
+@onready var sfx_win: AudioStreamPlayer = $SFXWin
+@onready var sfx_lose: AudioStreamPlayer = $SFXLose
+@onready var sfx_punch: AudioStreamPlayer = $SFXPunch
 
 var jump_counts = 0
 var is_crouching = false
@@ -38,7 +41,11 @@ func _physics_process(delta):
 		slide_timer -= delta
 		if slide_timer <= 0:
 			is_sliding = false
-
+			
+	
+	if Input.is_action_just_pressed("ui_accept"):
+		_attack()
+	
 	is_crouching = Input.is_action_pressed("ui_down") and is_on_floor() and not is_sliding
 
 	if Input.is_action_pressed("ui_down") and is_on_floor() and not is_sliding:
@@ -103,11 +110,17 @@ func _update_collision():
 func on_reach_finish():
 	is_finished = true
 	velocity = Vector2.ZERO
+	
 
+func _attack() -> void:
+	sfx_punch.play()
+	var attack_area: Area2D = $AttackArea
+	for body in attack_area.get_overlapping_bodies():
+		if body.has_method("die"):
+			body.die()
+			
 
-func _ready() -> void:
-	pass
-
-
-func _process(delta):
-	pass
+func stop_bgm() -> void:
+	var bgm = get_tree().get_root().find_child("BGM", true, false)
+	if bgm:
+		bgm.stop()

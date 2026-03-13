@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://c75jwtf5oqbgb"]
+
+[ext_resource type="Script" uid="uid://cpe454yvp7adb" path="res://scenes/Player2.gd" id="1_c08b3"]
+[ext_resource type="Texture2D" uid="uid://dhekgeikjt1lx" path="res://assets/kenney_platformercharacters/PNG/Player/player_tilesheet.png" id="1_lttm1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c08b3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c08b3"]
+atlas = ExtResource("1_lttm1")
+region = Rect2(0, 0, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agjl5"]
+atlas = ExtResource("1_lttm1")
+region = Rect2(0, 110, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj65e"]
+atlas = ExtResource("1_lttm1")
+region = Rect2(80, 110, 80, 110)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hb4is"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c08b3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agjl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dj65e")
+}],
+"loop": true,
+"name": &"walk right",
+"speed": 5.0
+}]
+
+[node name="Player2" type="CharacterBody2D" unique_id=1003032504]
+script = ExtResource("1_c08b3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1877926768]
+shape = SubResource("RectangleShape2D_c08b3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1087543384]
+sprite_frames = SubResource("SpriteFrames_hb4is")
+animation = &"walk right"
+frame_progress = 0.05258607

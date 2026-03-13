@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://3sayjvukgrof" path="res://scenes/player.tscn" id="2_rvslj"]
 [ext_resource type="PackedScene" uid="uid://ytqmfyv4qyxv" path="res://scenes/FinishPoint.tscn" id="3_0bbpv"]
 [ext_resource type="PackedScene" uid="uid://bhva1l0b3214e" path="res://scenes/Ground2.tscn" id="4_rarhs"]
+[ext_resource type="PackedScene" uid="uid://uslxj304oh5l" path="res://scenes/Enemy.tscn" id="6_c01mt"]
+[ext_resource type="AudioStream" uid="uid://3wvxcyyyf78r" path="res://assets/sound/bgm.wav" id="7_nxtc6"]
 
 [node name="Root" type="Node2D" unique_id=918599496]
 
@@ -42,4 +44,13 @@ position = Vector2(923, 243)
 position = Vector2(-15, 15)
 
 [node name="Player" parent="." unique_id=269357983 instance=ExtResource("2_rvslj")]
-position = Vector2(-15, 285)
+position = Vector2(256, 369)
+
+[node name="Enemy" parent="." unique_id=1466642668 instance=ExtResource("6_c01mt")]
+position = Vector2(930, 402)
+scale = Vector2(0.2, 0.2)
+
+[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=1792442729]
+stream = ExtResource("7_nxtc6")
+volume_db = -11.794
+autoplay = true

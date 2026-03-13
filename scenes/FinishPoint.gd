@@ -7,9 +7,6 @@ func _ready() -> void:
 
 func _on_body_entered(body):
 	if body.name == "Player":
+		body.stop_bgm()
+		body.sfx_win.play()
 		body.on_reach_finish()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
